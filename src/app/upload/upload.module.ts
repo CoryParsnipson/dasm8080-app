@@ -9,14 +9,14 @@ import {
    MatProgressBarModule,
 } from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { DialogComponent } from './dialog/dialog.component'
 import { UploadComponent } from './upload.component'
-import { UploadService } from './upload.service'
+import { UploadFormComponent } from './upload-form/upload-form.component'
+import { UploadService } from './upload.service';
 
 @NgModule({
-  declarations: [UploadComponent, DialogComponent],
+  declarations: [UploadComponent, UploadFormComponent],
   exports: [UploadComponent],
-  entryComponents: [DialogComponent],
+  entryComponents: [UploadFormComponent],
   imports: [
     CommonModule,
     MatButtonModule,

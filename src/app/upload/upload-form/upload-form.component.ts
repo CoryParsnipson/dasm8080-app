@@ -4,11 +4,11 @@ import { UploadService } from '../upload.service'
 import { forkJoin } from 'rxjs/observable/forkJoin'
 
 @Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss']
+  selector: 'app-upload-form',
+  templateUrl: './upload-form.component.html',
+  styleUrls: ['./upload-form.component.scss']
 })
-export class DialogComponent implements OnInit {
+export class UploadFormComponent implements OnInit {
    @ViewChild('file', { static: false }) file
    public files: Set<File> = new Set()
 
@@ -20,7 +20,7 @@ export class DialogComponent implements OnInit {
    uploadSuccessful = false
 
    constructor(
-      public dialogRef: MatDialogRef<DialogComponent>,
+      public dialogRef: MatDialogRef<UploadFormComponent>,
       public uploadService: UploadService) {
    }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material'
-import { DialogComponent } from './dialog/dialog.component'
+import { UploadFormComponent } from './upload-form/upload-form.component'
 import { UploadService } from './upload.service'
 
 @Component({
@@ -15,7 +15,7 @@ export class UploadComponent implements OnInit {
   }
 
   public openUploadDialog() {
-     let dialogRef = this.dialog.open(DialogComponent, {
+     let dialogRef = this.dialog.open(UploadFormComponent, {
         width: '50%',
         height: '50%',
      });
