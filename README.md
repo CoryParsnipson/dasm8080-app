@@ -25,3 +25,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Reference code for Angular File Upload Module
+[Angular File Upload Component with Express](https://malcoded.com/posts/angular-file-upload-component-with-express/#adding-the-dialogcomponent-as-entrycomponent)

@@ -1,5 +1,7 @@
 <div class="centered">
    <h1>{{title}}</h1>
 
+   <app-upload></app-upload>
+
    <app-instruction *ngFor="let inst of instructions" [inst]="inst"></app-instruction>
 </div>
