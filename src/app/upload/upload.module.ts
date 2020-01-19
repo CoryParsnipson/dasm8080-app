@@ -10,13 +10,15 @@ import {
 } from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { UploadComponent } from './upload.component'
-import { UploadFormComponent } from './upload-form/upload-form.component'
 import { UploadService } from './upload.service';
 
 @NgModule({
-  declarations: [UploadComponent, UploadFormComponent],
-  exports: [UploadComponent],
-  entryComponents: [UploadFormComponent],
+  declarations: [
+     UploadComponent,
+  ],
+  exports: [
+     UploadComponent
+  ],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -27,6 +29,8 @@ import { UploadService } from './upload.service';
     BrowserAnimationsModule,
     MatProgressBarModule,
   ],
-  providers: [UploadService],
+  providers: [
+     UploadService,
+  ],
 })
 export class UploadModule {}
