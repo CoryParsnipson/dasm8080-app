@@ -14,11 +14,9 @@ export class UploadComponent implements OnInit {
 
    files: Set<File> = new Set()
    progress
-   canBeClosed = true
-   primaryButtonText = 'Upload'
-   showCancelButton = true
+   primaryButtonText = 'Upload a Binary'
+   showUploadProgress = true
    uploading = false
-   uploadSuccessful = false
 
    constructor(
       public dialog: MatDialog,
@@ -34,22 +32,21 @@ export class UploadComponent implements OnInit {
 
    onFilesAdded() {
       const files: { [key: string]: File } = this.file.nativeElement.files;
+
+      this.files.clear(); // remove old files when user uploads a new one
       for (let key in files) {
          if (!isNaN(parseInt(key))) {
             this.files.add(files[key]);
          }
       }
+
+      this.submitFiles();
    }
 
-   closeDialog() {
-      // if everything was uploaded already, just close the dialog
-      // TODO: replace this with directive close
-      //if (this.uploadSuccessful) {
-      //   return this.dialogRef.close();
-      //}
-
+   submitFiles() {
       // set the component state to "uploading"
       this.uploading = true;
+      this.showUploadProgress = true;
 
       // start the upload and save the progress map
       this.progress = this.uploadService.upload(this.files);
@@ -60,23 +57,15 @@ export class UploadComponent implements OnInit {
          allProgressObservables.push(this.progress[key].progress);
       }
 
-      // the OK-button should have the text "Finish" now
-      this.primaryButtonText = 'Finish';
-
-      // dialog should not be closed while uploading
-      this.canBeClosed = false;
-      // TODO: replace this with directive close
-      //this.dialogRef.disableClose = true;
-      this.showCancelButton = false;
+      this.primaryButtonText = 'Upload another Binary';
 
       // when all progress-observables are completed...
       forkJoin(allProgressObservables).subscribe(end => {
-         // ... the dialog can be closed again...
-         this.canBeClosed = true;
-         // TODO: replace this with directive close
-         //this.dialogRef.disableClose = false;
-         this.uploadSuccessful = true;
-         this.uploading = false;
+         // add delay for aesthetics
+         setTimeout(() => {
+            this.uploading = false;
+            this.showUploadProgress = false;
+         }, 2000);
       });
    }
 }
