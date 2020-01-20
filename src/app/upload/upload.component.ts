@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ComponentFactoryResolver, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material'
 import { forkJoin } from 'rxjs/observable/forkJoin'
 import { UploadService } from './upload.service'
@@ -10,6 +10,7 @@ import { UploadService } from './upload.service'
 })
 export class UploadComponent implements OnInit {
    @ViewChild('file', { static: false }) file
+   @ViewChild('uploadlist', { read: ElementRef, static: false }) uploadList
    @Input() allowMultiple = false
 
    files: Set<File> = new Set()
@@ -48,6 +49,9 @@ export class UploadComponent implements OnInit {
       this.uploading = true;
       this.showUploadProgress = true;
 
+      // TODO: turn this into an animated slide down to visible (do nothing if already visible)
+      this.uploadList.nativeElement.style.display = '';
+
       // start the upload and save the progress map
       this.progress = this.uploadService.upload(this.files);
 
@@ -65,6 +69,9 @@ export class UploadComponent implements OnInit {
          setTimeout(() => {
             this.uploading = false;
             this.showUploadProgress = false;
+
+            // TODO: turn this into an animated slide up into nothing
+            this.uploadList.nativeElement.style.display = 'none';
          }, 2000);
       });
    }
