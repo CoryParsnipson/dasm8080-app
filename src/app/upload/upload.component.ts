@@ -50,6 +50,7 @@ export class UploadComponent implements OnInit {
       this.showUploadProgress = true;
 
       // TODO: turn this into an animated slide down to visible (do nothing if already visible)
+      // https://stackoverflow.com/questions/47248898/angular-4-5-6-7-simple-example-of-slide-in-out-animation-on-ngif
       this.uploadList.nativeElement.style.display = '';
 
       // start the upload and save the progress map
@@ -65,12 +66,16 @@ export class UploadComponent implements OnInit {
 
       // when all progress-observables are completed...
       forkJoin(allProgressObservables).subscribe(end => {
+         // TODO: need to put this in another component to modify instruction list
+         console.log(this.uploadService.getResponse());
+
          // add delay for aesthetics
          setTimeout(() => {
             this.uploading = false;
             this.showUploadProgress = false;
 
             // TODO: turn this into an animated slide up into nothing
+            // https://stackoverflow.com/questions/47248898/angular-4-5-6-7-simple-example-of-slide-in-out-animation-on-ngif
             this.uploadList.nativeElement.style.display = 'none';
          }, 2000);
       });
