@@ -2,5 +2,8 @@
    <div *ngIf="instructions.length == 0">
       No instructions loaded.
    </div>
-   <app-instruction *ngFor="let inst of instructions" [inst]="inst"></app-instruction>
+   <ng-container *ngIf="instructions.length > 0">
+      <h2>{{ filename }}</h2>
+      <app-instruction *ngFor="let inst of instructions" [inst]="inst"></app-instruction>
+   </ng-container>
 </div>

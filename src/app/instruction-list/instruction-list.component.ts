@@ -8,6 +8,7 @@ import { UploadService } from '../upload/upload.service'
   styleUrls: ['./instruction-list.component.scss']
 })
 export class InstructionListComponent implements OnInit {
+   filename: string
    instructions: Instruction[] = []
 
    constructor(
@@ -17,8 +18,13 @@ export class InstructionListComponent implements OnInit {
    ngOnInit() {
       this.uploadService.subscribe({
          next: res => {
+            // get rid of old disassembly artifacts
+            this.instructions.splice(0, this.instructions.length);
+
             // TODO: supply binary as @Input or something, make 1 instruction-list per binary
-            Object.values(res.body).forEach(binary => {
+            for (let [filename, binary] of Object.entries(res.body)) {
+               this.filename = filename;
+
                Object.values(binary).forEach(instrJSON => {
                   var instr: Instruction = new Instruction();
 
@@ -28,7 +34,7 @@ export class InstructionListComponent implements OnInit {
 
                   this.instructions.push(instr);
                });
-            });
+            }
          },
       });
    }
