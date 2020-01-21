@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
+import { forkJoin } from 'rxjs/observable/forkJoin'
 import {
    HttpClient,
    HttpRequest,
@@ -15,9 +16,12 @@ const url = 'http://localhost:8000/upload'
   providedIn: 'root'
 })
 export class UploadService {
-   private res : HttpResponse
+   private res: HttpResponse<any>
+   private uploadComplete: Subject<HttpResponse<any>>
 
-   constructor(private http: HttpClient) {}
+   constructor(private http: HttpClient) {
+      this.uploadComplete = new Subject<HttpResponse<any>>();
+   }
 
    public upload(files: Set<File>): { [key: string]: { progress: Observable<number> } } {
       // resulting map (notice how it is the same as the return type of this function)
@@ -59,10 +63,19 @@ export class UploadService {
          };
       });
 
+      // forkJoin this and emit an event to uploadComplete observer
+      let allObservables = [];
+      for (let key in status) {
+         allObservables.push(status[key].progress);
+      }
+      forkJoin(allObservables).subscribe(complete => {
+         this.uploadComplete.next(this.res);
+      });
+
       return status;
    }
 
-   public getResponse() {
-      return this.res;
+   public subscribe(observer) {
+      this.uploadComplete.subscribe(observer);
    }
 }

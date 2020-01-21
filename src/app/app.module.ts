@@ -3,17 +3,17 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { InstructionComponent } from './instruction/instruction.component';
-import { UploadModule } from './upload/upload.module'
+import { InstructionListModule } from './instruction-list/instruction-list.module';
+import { UploadModule } from './upload/upload.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InstructionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    InstructionListModule,
     UploadModule,
   ],
   providers: [],

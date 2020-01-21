@@ -1,0 +1,6 @@
+<div class="instruction-list-container">
+   <div *ngIf="instructions.length == 0">
+      No instructions loaded.
+   </div>
+   <app-instruction *ngFor="let inst of instructions" [inst]="inst"></app-instruction>
+</div>

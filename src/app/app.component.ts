@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Instruction } from './instruction';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,4 @@ import { Instruction } from './instruction';
 })
 export class AppComponent {
   title = 'dasm8080-app';
-  
-  instructions: Instruction[] = [
-     { "op": "MOV" },
-     { "op": "SUI" },
-  ];
 }

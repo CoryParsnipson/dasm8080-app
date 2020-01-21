@@ -65,10 +65,7 @@ export class UploadComponent implements OnInit {
       this.primaryButtonText = 'Upload another Binary';
 
       // when all progress-observables are completed...
-      forkJoin(allProgressObservables).subscribe(end => {
-         // TODO: need to put this in another component to modify instruction list
-         console.log(this.uploadService.getResponse());
-
+      forkJoin(allProgressObservables).subscribe(complete => {
          // add delay for aesthetics
          setTimeout(() => {
             this.uploading = false;

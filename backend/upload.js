@@ -6,9 +6,8 @@ module.exports = function upload(req, res) {
    var dasm_files = {};
 
    form.on('file', (field, file) => {
-      console.log(JSON.stringify(file));
       // run the disassembler
-      // TODO: add support for streaming disassembly
+      // TODO: add support for streaming disassembly?
       dasm_files[file.name] = dasm.disassemble(file.path);
    });
 
