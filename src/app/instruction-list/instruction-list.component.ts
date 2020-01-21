@@ -17,7 +17,18 @@ export class InstructionListComponent implements OnInit {
    ngOnInit() {
       this.uploadService.subscribe({
          next: res => {
-            console.log(JSON.stringify(res));
+            // TODO: supply binary as @Input or something, make 1 instruction-list per binary
+            Object.values(res.body).forEach(binary => {
+               Object.values(binary).forEach(instrJSON => {
+                  var instr: Instruction = new Instruction();
+
+                  // unpack JSON data fields into Instruction class
+                  // (TODO: probably a better way of doing this using type-safe RPC calls or something)
+                  instr.op = instrJSON.opcode;
+
+                  this.instructions.push(instr);
+               });
+            });
          },
       });
    }
