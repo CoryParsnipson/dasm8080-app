@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+
 import { Instruction } from './instruction';
 import { UploadService } from '../upload/upload.service'
 
@@ -30,7 +31,12 @@ export class InstructionListComponent implements OnInit {
 
                   // unpack JSON data fields into Instruction class
                   // (TODO: probably a better way of doing this using type-safe RPC calls or something)
-                  instr.op = instrJSON.opcode;
+                  instr.addr = instrJSON.addr;
+                  instr.file = instrJSON.file;
+                  instr.num_bytes = instrJSON.num_bytes;
+                  instr.opcode = instrJSON.opcode;
+                  instr.operands = instrJSON.operands;
+                  instr.raw = instrJSON.data;
 
                   this.instructions.push(instr);
                });
