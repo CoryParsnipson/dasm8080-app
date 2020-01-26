@@ -33,10 +33,14 @@ export class InstructionListComponent implements OnInit {
                   // (TODO: probably a better way of doing this using type-safe RPC calls or something)
                   instr.addr = instrJSON.addr;
                   instr.file = instrJSON.file;
-                  instr.num_bytes = instrJSON.num_bytes;
+                  instr.num_bytes = instrJSON.len;
                   instr.opcode = instrJSON.opcode;
                   instr.operands = instrJSON.operands;
-                  instr.raw = instrJSON.data;
+                  instr.raw = [];
+                  for (let b of instrJSON.raw.data.values()) {
+                     instr.raw.push(b);
+                  }
+                  instr.type = instrJSON.type;
 
                   this.instructions.push(instr);
                });

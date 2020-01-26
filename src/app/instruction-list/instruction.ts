@@ -5,4 +5,5 @@ export class Instruction {
    opcode: string;
    operands: Object;
    raw: number[];
+   type: string;
 }

@@ -7,7 +7,9 @@ import { Instruction } from '../instruction';
   styleUrls: ['./instruction.component.scss']
 })
 export class InstructionComponent implements OnInit {
-  @Input() inst : Instruction;
+  @Input() inst: Instruction
+  @Input() isOdd: boolean
+  @Input() isLast: boolean
 
   constructor() { }
 

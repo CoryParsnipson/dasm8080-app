@@ -1,6 +1,6 @@
-<div class="instruction-container">
+<div [ngClass]="['instruction-container', (isOdd ? 'odd' : ''), (isLast ? 'last' : '')]">
    <div>{{inst.addr}}</div>
-   <div>{{inst.opcode}}</div>
-   <div><app-operands [data]="inst.operands"></app-operands></div>
+   <app-opcode [value]="inst.opcode" [opType]="inst.type"></app-opcode>
+   <app-operands [data]="inst.operands"></app-operands>
    <div>{{inst.raw}}</div>
 </div>

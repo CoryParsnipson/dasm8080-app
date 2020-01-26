@@ -1,11 +1,13 @@
-<ng-container *ngIf="data?.src || data?.dst">
-   {{ data?.dst }}<ng-container *ngIf="data?.src && data?.dst">,</ng-container> {{ data?.src }}
-</ng-container>
-
-<ng-container *ngIf="data?.rp || data?.data_lo || data?.data_lo === 0 || data?.data_hi || data?.data_hi === 0">
-   {{ data?.rp }}<ng-container *ngIf="data?.rp">, </ng-container>{{ data?.data_lo | hexadecimalPipe: "":2 }} {{ data?.data_hi | hexadecimalPipe: "":2 }}
-</ng-container>
-
-<ng-container *ngIf="data?.data || data?.data === 0">
-   {{ data?.data | hexadecimalPipe: "":2 }}
-</ng-container>
+<div>
+   <ng-container *ngIf="data?.src || data?.dst">
+      {{ data?.dst }}<ng-container *ngIf="data?.src && data?.dst">,</ng-container> {{ data?.src }}
+   </ng-container>
+   
+   <ng-container *ngIf="data?.rp || data?.data_lo || data?.data_lo === 0 || data?.data_hi || data?.data_hi === 0">
+      {{ data?.rp }}<ng-container *ngIf="data?.rp">, </ng-container>{{ data?.data_lo | hexadecimalPipe: "":2 }} {{ data?.data_hi | hexadecimalPipe: "":2 }}
+   </ng-container>
+   
+   <ng-container *ngIf="data?.data || data?.data === 0">
+      {{ data?.data | hexadecimalPipe: "":2 }}
+   </ng-container>
+</div>

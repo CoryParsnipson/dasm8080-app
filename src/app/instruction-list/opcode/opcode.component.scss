@@ -1,0 +1,75 @@
+.opcode {
+   padding: 5px;
+}
+
+.ACCUM {
+   background-color: orange;
+}
+
+.CALL {
+   background-color: lightgreen;
+}
+
+.CARRY {
+   color: white;
+   background-color: darkblue;
+}
+
+.DATAXFER {
+   color: white;
+   background-color: brown;
+}
+
+.DIRECTADDR {
+   background-color: pink;
+}
+
+.HALT {
+   background-color: pink;
+}
+
+.IO {
+   color: white;
+   background-color: purple;
+}
+
+.IMMEDIATE {
+   color: white;
+   background-color: blue;
+}
+
+.INTERRUPT {
+   color: brown;
+   background-color: yellow;
+}
+
+.JUMP {
+   color: white;
+   background-color: green;
+}
+
+.NOP {
+   background-color: lightgrey;
+}
+
+.REGPAIR {
+   background-color: darkorange;
+}
+
+.RESET {
+   background-color: red;
+}
+
+.RETURN {
+   background-color: burlywood;
+}
+
+.ROTATE {
+   color: white;
+   background-color: mediumvioletred;
+}
+
+.SINGLEREG {
+   color: #333333;
+   background-color: lightblue;
+}
