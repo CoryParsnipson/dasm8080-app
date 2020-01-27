@@ -4,6 +4,12 @@
    </div>
    <ng-container *ngIf="instructions.length > 0">
       <h2>{{ filename }}</h2>
+      <div class="instruction-header">
+         <div>Addr</div>
+         <div>Opcode</div>
+         <div>Operands</div>
+         <div>Raw</div>
+      </div>
       <app-instruction
          *ngFor="let inst of instructions; let i = index; last as isLast"
          [isOdd]="i % 2"

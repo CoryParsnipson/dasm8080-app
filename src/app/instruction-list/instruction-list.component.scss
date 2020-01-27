@@ -1,7 +1,17 @@
 h2 {
    text-align: left;
+   margin-bottom: 1em;
 }
 
 .instruction-list-container {
    margin: 2em 0;
+}
+
+.instruction-header {
+   background-color: #DCDCDC;
+   border-bottom: 1px solid #333333;
+   display: grid;
+   font-weight: bold;
+   grid-template-columns: 30% 10% 30% 30%;
+   padding: 5px;
 }
