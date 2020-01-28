@@ -2,5 +2,9 @@
    <div>{{inst.addr}}</div>
    <app-opcode [value]="inst.opcode" [opType]="inst.type"></app-opcode>
    <app-operands [data]="inst.operands"></app-operands>
-   <div>{{inst.raw}}</div>
+   <div class="raw-column">
+      <ng-container *ngFor="let r of inst.raw">
+         {{ r | hexadecimalPipe: "":2 }}
+      </ng-container>
+   </div>
 </div>

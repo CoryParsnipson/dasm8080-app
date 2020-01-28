@@ -1,7 +1,15 @@
 div.centered {
    margin: auto;
    text-align: center;
-   width: 600px;
+   min-width: 300px;
+   max-width: 600px;
+   width: 50%;
+}
+
+@media (max-width: 600px) {
+   div.centered {
+      width: 100%;
+   }
 }
 
 .upload {

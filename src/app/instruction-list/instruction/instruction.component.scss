@@ -1,7 +1,20 @@
 div.instruction-container {
    display: grid;
-   grid-template-columns: 30% 10% 30% 30%;
+   grid-template-columns: minmax(60px, auto) minmax(75px, auto) minmax(80px, 1fr) minmax(75px, 0.75fr);
    border-bottom: 1px solid #333333;
+}
+
+div.instruction-container div {
+   padding: 5px;
+   margin: 5px;
+}
+
+div.instruction-container div.raw-column {
+   text-align: left;
+   font-family: Monospace;
+   font-size: 12pt;
+   padding: 5px 2em;
+   margin: 5px;
 }
 
 div.instruction-container.odd {
