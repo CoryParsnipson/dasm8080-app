@@ -1,8 +1,9 @@
 div.centered {
    margin: auto;
-   text-align: center;
-   min-width: 300px;
+   margin-top: 2em;
    max-width: 600px;
+   min-width: 300px;
+   text-align: center;
    width: 50%;
 }
 
@@ -14,4 +15,9 @@ div.centered {
 
 .upload {
    margin: 2em 0;
+}
+
+h1 {
+   font-weight: normal;
+   font-size: 24pt;
 }

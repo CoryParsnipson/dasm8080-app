@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dasm8080-app';
+  title = 'Online Intel 8080 Disassembler';
 }
