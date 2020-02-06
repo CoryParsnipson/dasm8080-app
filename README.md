@@ -30,3 +30,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Reference code for Angular File Upload Module
 [Angular File Upload Component with Express](https://malcoded.com/posts/angular-file-upload-component-with-express/#adding-the-dialogcomponent-as-entrycomponent)
+
+## TODO
+
+* Reorganize css to use angular theme
+* Add support to dynamically switch between light and dark (default to dark)
+* Test the end to end flow with a binary that will result in a disassembler error (make sure this case is user friendly)
+* Deploy
