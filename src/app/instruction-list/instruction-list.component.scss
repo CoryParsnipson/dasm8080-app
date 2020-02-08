@@ -1,7 +1,15 @@
 h2 {
+   font-size: 0.8rem;
    font-weight: normal;
+   line-height: inherit;
    margin-bottom: 0.5em;
    text-align: left;
+}
+
+@media (max-width: 600px) {
+   .binary-name {
+      padding: 0 0.5rem;
+   }
 }
 
 .instruction-list-container {

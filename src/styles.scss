@@ -2,12 +2,9 @@
 @import '~@clr/ui/clr-ui.min.css';
 @import '~@clr/icons/clr-icons.min.css';
 
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
-
 * {
    margin: 0;
    padding: 0;
-   font-family: 'Source Sans Pro';
 }
 
 .bold {
@@ -18,3 +15,13 @@
    text-align: left;
 }
 
+// override Clarity class to have 0 margin instead of 0.25rem on everything
+// except the left side for some reason??
+.btn {
+   margin: 0;
+}
+
+// override Clarity class to have no text decoration on list items
+.list li {
+   list-style-type: none;
+}

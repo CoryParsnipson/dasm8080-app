@@ -9,23 +9,23 @@
    <div>
       <button
          [disabled]="uploading"
-         mat-raised-button
-         color="primary"
-         class="add-files-btn"
+         class="btn btn-primary add-files-btn"
          (click)="addFiles()"
       >
          {{primaryButtonText}}
       </button>
    </div>
 
-   <mat-list #uploadlist fxFlex>
-      <mat-list-item *ngFor="let file of files">
-         <h4 mat-line>{{file.name}}</h4>
-         <mat-progress-bar
-            *ngIf="progress"
-            mode="determinate"
-            [value]="progress[file.name].progress | async"
-         ></mat-progress-bar>
-      </mat-list-item>
-   </mat-list>
+   <ul class="list" #uploadlist fxFlex>
+      <li *ngFor="let file of files">
+         <h4>{{file.name}}</h4>
+         <div class="progress flash">
+            <progress
+               *ngIf="progress"
+               max="100"
+               [value]="progress[file.name].progress | async"
+            ></progress>
+         </div>
+      </li>
+   </ul>
 </div>
