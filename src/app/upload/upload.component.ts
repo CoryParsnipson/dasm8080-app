@@ -34,6 +34,11 @@ export class UploadComponent implements OnInit {
    onFilesAdded() {
       const files: { [key: string]: File } = this.file.nativeElement.files;
 
+      // assume if files is empty, the user has hit cancel
+      if (!files.length) {
+         return;
+      }
+
       this.files.clear(); // remove old files when user uploads a new one
       for (let key in files) {
          if (!isNaN(parseInt(key))) {
