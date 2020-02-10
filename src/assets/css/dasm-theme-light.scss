@@ -1,2 +1,24 @@
+$dasm-global-font-color-secondary: hsl(198, 0%, 19%);
+$dasm-global-font-color-tertiary: hsl(0, 0%, 21%);
+
+$dasm-odd-row-bg-color: hsl(198, 0%,  93%);
+
+$dasm-optype-accum: hsl(36, 80%, 59%);
+$dasm-optype-call: hsl(141, 58%, 65%);
+$dasm-optype-carry: hsl(54, 39%, 43%);
+$dasm-optype-directaddr: hsl(95, 26%, 52%);
+$dasm-optype-dataxfer: hsl(31, 24%, 47%);
+$dasm-optype-halt: hsl(339, 48%, 83%);
+$dasm-optype-io: hsl(291, 26%, 52%);
+$dasm-optype-immediate: hsl(218, 87%, 63%);
+$dasm-optype-interrupt: hsl(51, 74%, 65%);
+$dasm-optype-jump: hsl(335, 76%, 70%);
+$dasm-optype-nop: hsl(201, 0%, 81%);
+$dasm-optype-regpair: hsl(24, 60%, 48%);
+$dasm-optype-reset: hsl(0, 60%, 55%);
+$dasm-optype-return: hsl(32, 57%, 77%);
+$dasm-optype-rotate: hsl(266, 57%, 77%);
+$dasm-optype-singlereg: hsl(203, 57%, 77%);
+
 // Clarity Component SCSS
 @import "node_modules/@clr/ui/src/utils/components.clarity";
