@@ -1,20 +1,18 @@
-<div class="instruction-list-container">
-   <div *ngIf="instructions.length == 0">
-      No instructions loaded.
+<div *ngIf="instructions.length > 0" class="instruction-list-container">
+   <h2 class="binary-name">{{ filename }}</h2>
+   <div class="instruction-header bottom-border row-highlight global-font-color">
+      <div>Addr</div>
+      <div>Opcode</div>
+      <div class="large-side-padding left-justify">Operands</div>
+      <div class="large-side-padding left-justify">Raw Data</div>
    </div>
-   <ng-container *ngIf="instructions.length > 0">
-      <h2 class="binary-name">{{ filename }}</h2>
-      <div class="instruction-header row-highlight global-font-color">
-         <div>Addr</div>
-         <div>Opcode</div>
-         <div class="large-side-padding left-justify">Operands</div>
-         <div class="large-side-padding left-justify">Raw Data</div>
-      </div>
-      <app-instruction
-         *ngFor="let inst of instructions; let i = index; last as isLast"
-         [isOdd]="i % 2"
-         [isLast]="isLast"
-         [inst]="inst"
-      ></app-instruction>
-   </ng-container>
+   <app-instruction
+      *ngFor="let inst of instructions; let i = index; last as isLast"
+      [isOdd]="i % 2"
+      [isLast]="isLast"
+      [inst]="inst"
+   ></app-instruction>
+</div>
+<div *ngIf="instructions.length == 0">
+   No instructions loaded.
 </div>

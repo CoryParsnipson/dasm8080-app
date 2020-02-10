@@ -2,7 +2,6 @@ div.centered {
    margin: auto;
    margin-top: 2em;
    max-width: 600px;
-   min-width: 500px;
    text-align: center;
    width: 50%;
 }
@@ -10,6 +9,12 @@ div.centered {
 @media (max-width: 600px) {
    div.centered {
       width: 100%;
+   }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+   div.centered {
+      width: 75%;
    }
 }
 

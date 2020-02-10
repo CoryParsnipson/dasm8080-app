@@ -1,6 +1,6 @@
 div.instruction-container {
    display: grid;
-   grid-template-columns: minmax(60px, auto) minmax(75px, auto) minmax(110px, 1fr) minmax(100px, 0.75fr);
+   grid-template-columns: minmax(60px, auto) minmax(75px, auto) minmax(100px, 0.75fr) minmax(100px, 0.75fr);
 }
 
 div.instruction-container div {
@@ -13,6 +13,7 @@ div.instruction-container div.raw-column {
    font-family: Monospace;
    font-size: 12pt;
    padding: 5px 2em;
+   padding-right: 0;
    margin: 5px;
 }
 

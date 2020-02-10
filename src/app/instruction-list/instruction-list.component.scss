@@ -6,24 +6,33 @@ h2 {
    text-align: left;
 }
 
-@media (max-width: 600px) {
-   .binary-name {
-      padding: 0 0.5rem;
-   }
-}
-
 .instruction-list-container {
    margin: 2em 0;
 }
 
 .instruction-header {
-   border-bottom: 1px solid #333333;
    display: grid;
    font-weight: bold;
-   grid-template-columns: minmax(60px, auto) minmax(75px, auto) minmax(110px, 1fr) minmax(100px, 0.75fr);
+   grid-template-columns: minmax(60px, auto) minmax(75px, auto) minmax(100px, 0.75fr) minmax(100px, 0.75fr);
    padding: 5px;
 }
 
 div.large-side-padding {
    padding: 0 2em;
+}
+
+@media (max-width: 600px) {
+   .binary-name {
+      padding: 0 0.5rem;
+   }
+
+   .instruction-list-container {
+      min-width: 400px;
+   }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+   .instruction-list-container {
+      min-width: 500px;
+   }
 }
