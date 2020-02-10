@@ -1,5 +1,4 @@
 import { Component, ComponentFactoryResolver, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material'
 import { forkJoin } from 'rxjs/observable/forkJoin'
 import { UploadService } from './upload.service'
 
@@ -20,7 +19,6 @@ export class UploadComponent implements OnInit {
    uploading = false
 
    constructor(
-      public dialog: MatDialog,
       public uploadService: UploadService,
       private componentFactoryResolver: ComponentFactoryResolver) {}
 
