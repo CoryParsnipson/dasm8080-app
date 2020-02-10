@@ -1,4 +1,4 @@
-<div [ngClass]="['instruction-container', (isOdd ? 'odd' : ''), (isLast ? 'last' : '')]">
+<div [ngClass]="['instruction-container', (isOdd ? 'row-highlight' : ''), (isLast ? 'last' : '')]">
    <div>{{inst.addr}}</div>
    <app-opcode [value]="inst.opcode" [opType]="inst.type"></app-opcode>
    <app-operands [data]="inst.operands"></app-operands>

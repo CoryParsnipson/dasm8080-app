@@ -1,6 +1,7 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-@import '~@clr/ui/clr-ui.min.css';
 @import '~@clr/icons/clr-icons.min.css';
+
+// import custom themes
+@import 'assets/css/dasm-theme-dark.scss';
 
 * {
    margin: 0;
@@ -15,6 +16,23 @@
    text-align: left;
 }
 
+.row-highlight {
+   background-color: $dasm-odd-row-bg-color;
+}
+
+.global-font-color {
+   color: $clr-global-font-color;
+}
+
+.global-font-color-tertiary {
+   color: $dasm-global-font-color-tertiary;
+}
+
+// clarity design layout overrides
+.content-area {
+   padding: 0 !important;
+}
+
 // override Clarity class to have 0 margin instead of 0.25rem on everything
 // except the left side for some reason??
 .btn {
@@ -24,4 +42,84 @@
 // override Clarity class to have no text decoration on list items
 .list li {
    list-style-type: none;
+}
+
+.optype-ACCUM {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-accum;
+}
+
+.optype-CALL {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-call;
+}
+
+.optype-CARRY {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-carry;
+}
+
+.optype-DATAXFER {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-dataxfer;
+}
+
+.optype-DIRECTADDR {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-directaddr;
+}
+
+.optype-HALT {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-halt;
+}
+
+.optype-IO {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-io;
+}
+
+.optype-IMMEDIATE {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-immediate;
+}
+
+.optype-INTERRUPT {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-interrupt;
+}
+
+.optype-JUMP {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-jump;
+}
+
+.optype-NOP {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-nop;
+}
+
+.optype-REGPAIR {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-regpair;
+}
+
+.optype-RESET {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-reset;
+}
+
+.optype-RETURN {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-return;
+}
+
+.optype-ROTATE {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-rotate;
+}
+
+.optype-SINGLEREG {
+   color: $dasm-global-font-color-tertiary;
+   background-color: $dasm-optype-singlereg;
 }

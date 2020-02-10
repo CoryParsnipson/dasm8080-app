@@ -1,0 +1,31 @@
+@import "node_modules/@clr/ui/src/utils/theme.dark.clarity"; // Dark theme variables
+
+$clr-btn-primary-bg-color: hsl(216, 88%, 68%);
+$clr-btn-primary-border-color: hsl(216, 88%, 68%);
+$clr-btn-primary-hover-bg-color: hsl(212, 92%, 72%);
+
+$clr-global-font-color: hsl(210, 0%, 97%);
+$clr-global-font-color-secondary: hsl(203, 16%, 72%);
+$dasm-global-font-color-tertiary: hsl(0, 0%, 21%);
+
+$dasm-odd-row-bg-color: hsl(201, 31%, 22%);
+
+$dasm-optype-accum: hsl(36, 80%, 59%);
+$dasm-optype-call: hsl(141, 58%, 65%);
+$dasm-optype-carry: hsl(54, 39%, 43%);
+$dasm-optype-directaddr: hsl(95, 26%, 52%);
+$dasm-optype-dataxfer: hsl(31, 24%, 47%);
+$dasm-optype-halt: hsl(339, 48%, 83%);
+$dasm-optype-io: hsl(291, 26%, 52%);
+$dasm-optype-immediate: hsl(218, 87%, 63%);
+$dasm-optype-interrupt: hsl(51, 74%, 65%);
+$dasm-optype-jump: hsl(335, 76%, 70%);
+$dasm-optype-nop: hsl(201, 0%, 81%);
+$dasm-optype-regpair: hsl(24, 60%, 48%);
+$dasm-optype-reset: hsl(0, 60%, 55%);
+$dasm-optype-return: hsl(32, 57%, 77%);
+$dasm-optype-rotate: hsl(266, 57%, 77%);
+$dasm-optype-singlereg: hsl(203, 57%, 77%);
+
+// Clarity Component SCSS
+@import "node_modules/@clr/ui/src/utils/components.clarity";
