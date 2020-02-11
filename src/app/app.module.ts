@@ -6,10 +6,12 @@ import { ClarityModule } from '@clr/angular';
 import { AppComponent } from './app.component';
 import { InstructionListModule } from './instruction-list/instruction-list.module';
 import { UploadModule } from './upload/upload.module';
+import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 
 @NgModule({
   declarations: [
      AppComponent,
+     ThemeSwitcherComponent,
   ],
   imports: [
      BrowserModule,

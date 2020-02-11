@@ -37,6 +37,12 @@
    padding: 0 !important;
 }
 
+.header {
+   height: inherit;
+   flex-basis: auto;
+   align-items: right;
+}
+
 // override Clarity class to have 0 margin instead of 0.25rem on everything
 // except the left side for some reason??
 .btn {
