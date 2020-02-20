@@ -29,8 +29,6 @@
             ],
             "styles": [
               "node_modules/@clr/icons/clr-icons.min.css",
-              "src/assets/css/dasm-theme-dark.scss",
-              "src/assets/css/dasm-theme-light.scss",
               "src/styles.scss"
             ],
             "scripts": [
@@ -100,8 +98,6 @@
             ],
             "styles": [
               "node_modules/@clr/icons/clr-icons.min.css",
-              "src/assets/css/dasm-theme-dark.scss",
-              "src/assets/css/dasm-theme-light.scss",
               "src/styles.scss"
             ],
             "scripts": [

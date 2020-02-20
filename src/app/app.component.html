@@ -1,14 +1,26 @@
-<header class="header">
-   <app-theme-switcher
-      class="flex-right-justify"
-   ></app-theme-switcher>
-</header>
-<div class="content-container">
-   <div class="content-area">
-      <div class="centered">
-         <h1>{{title}}</h1>
-         <app-upload class="upload"></app-upload>
-         <app-instruction-list></app-instruction-list>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dasm8080App</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="main-container">
+   <header class="header">
+      <app-theme-switcher
+         class="flex-right-justify"
+      ></app-theme-switcher>
+   </header>
+   <div class="content-container">
+      <div class="content-area">
+         <div class="centered">
+            <h1>{{title}}</h1>
+            <app-upload class="upload"></app-upload>
+            <app-instruction-list></app-instruction-list>
+         </div>
       </div>
    </div>
-</div>
+</body>
+</html>
