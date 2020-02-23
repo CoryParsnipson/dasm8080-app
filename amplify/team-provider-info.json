@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-dasm8080-app-dev-192846-authRole",
+            "UnauthRoleArn": "arn:aws:iam::239275927704:role/amplify-dasm8080-app-dev-192846-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::239275927704:role/amplify-dasm8080-app-dev-192846-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-dasm8080-app-dev-192846-deployment",
+            "UnauthRoleName": "amplify-dasm8080-app-dev-192846-unauthRole",
+            "StackName": "amplify-dasm8080-app-dev-192846",
+            "StackId": "arn:aws:cloudformation:us-west-2:239275927704:stack/amplify-dasm8080-app-dev-192846/9ab3d120-55ec-11ea-a9bb-024a7c148296",
+            "AmplifyAppId": "dazl6pjkxbx1k"
+        }
+    }
+}

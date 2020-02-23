@@ -1,0 +1,17 @@
+{
+    "projectName": "dasm8080-app",
+    "version": "3.0",
+    "frontend": "javascript",
+    "javascript": {
+        "framework": "angular",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "dist",
+            "BuildCommand": "npm run-script build",
+            "StartCommand": "ng serve && npm run start"
+        }
+    },
+    "providers": [
+        "awscloudformation"
+    ]
+}
