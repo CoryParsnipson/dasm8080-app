@@ -41,6 +41,11 @@
    height: inherit;
    flex-basis: auto;
    align-items: right;
+   padding: 0.5rem;
+}
+
+.info-label {
+   margin: 0 0.25rem;
 }
 
 // override Clarity class to have 0 margin instead of 0.25rem on everything

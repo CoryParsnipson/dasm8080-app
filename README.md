@@ -33,7 +33,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## TODO
 
-* Add support to dynamically switch between light and dark (default to dark)
 * Animation to slide file upload progress in and out
 * Test the end to end flow with a binary that will result in a disassembler error (make sure this case is user friendly)
 * Deploy
