@@ -10,7 +10,8 @@ import { Subject } from 'rxjs/Subject'
 import { Observable } from 'rxjs/Observable'
 
 // this comes from endpoint defined from express.js server
-const url = 'http://localhost:8000/upload'
+//const url = 'http://localhost:8000/upload'
+const url = 'https://kvtsj3ia7l.execute-api.us-west-2.amazonaws.com/dev/upload'
 
 @Injectable({
   providedIn: 'root'
