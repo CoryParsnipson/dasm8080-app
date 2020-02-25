@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Injectable, isDevMode } from '@angular/core'
 import { forkJoin } from 'rxjs/observable/forkJoin'
 import {
    HttpClient,
@@ -11,8 +11,8 @@ import { Observable } from 'rxjs/Observable'
 import { AmplifyService } from 'aws-amplify-angular';
 
 // this comes from endpoint defined from express.js server
-//const url = 'http://localhost:8000/upload'
-const url = 'https://kvtsj3ia7l.execute-api.us-west-2.amazonaws.com/dev/upload'
+const url = 'http://localhost:8000/upload'
+//const url = 'https://kvtsj3ia7l.execute-api.us-west-2.amazonaws.com/dev/upload'
 
 @Injectable({
   providedIn: 'root'
@@ -34,30 +34,46 @@ export class UploadService {
          const formData: FormData = new FormData();
          formData.append('file', file, file.name);
 
-         // create a http-post request and pass the form to tell it to report the upload progress
-         const req = new HttpRequest('POST', url, formData, {
-            reportProgress: true
-         });
-
          // create a new progress-subject for every file
          const progress = new Subject<number>();
+   
+         if (isDevMode()) {
+            // create a http-post request and pass the form to tell it to report the upload progress
+            const req = new HttpRequest('POST', url, formData, {
+               reportProgress: true
+            });
 
-         // send the http-request and subscribe for progress-updates
-         this.http.request(req).subscribe(event => {
-            if (event.type === HttpEventType.UploadProgress) {
-               // calculate the progress percentage
-               const percentDone = Math.round(100 * event.loaded / event.total);
-               
-               // pass the percentage into the progress stream
-               progress.next(percentDone);
-            } else if (event instanceof HttpResponse) {
-               // save the HttpResponse so that we can access it later
-               this.res = event;
+            // send the http-request and subscribe for progress-updates
+            this.http.request(req).subscribe(event => {
+               if (event.type === HttpEventType.UploadProgress) {
+                  // calculate the progress percentage
+                  const percentDone = Math.round(100 * event.loaded / event.total);
+                  
+                  // pass the percentage into the progress stream
+                  progress.next(percentDone);
+               } else if (event instanceof HttpResponse) {
+                  // save the HttpResponse so that we can access it later
+                  this.res = event;
 
-               // close the progress-stream if we get an answer from the API
+                  // close the progress-stream if we get an answer from the API
+                  progress.complete();
+               }
+            });
+         } else {
+            this.amplifyService.api().post('uploadApi', '/upload', {
+               headers: {
+                  'Content-Type': 'x-www-form-urlencoded',
+               },
+               body: {
+                  'file': file,
+               },
+            }).then(response => {
+               this.res = new HttpResponse<any>(event);
                progress.complete();
-            }
-         });
+            }).catch(error => {
+               console.log(error.response);
+            });
+         }
 
          // save every progress-observable in a map of all observable
          status[file.name] = {
