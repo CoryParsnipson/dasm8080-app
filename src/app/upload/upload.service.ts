@@ -68,7 +68,7 @@ export class UploadService {
                   'file': file,
                },
             }).then(response => {
-               this.res = new HttpResponse<any>(event);
+               this.res = new HttpResponse<any>(response);
                progress.complete();
             }).catch(error => {
                console.log(error.response);
