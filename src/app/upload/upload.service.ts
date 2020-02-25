@@ -8,6 +8,7 @@ import {
 } from '@angular/common/http'
 import { Subject } from 'rxjs/Subject'
 import { Observable } from 'rxjs/Observable'
+import { AmplifyService } from 'aws-amplify-angular';
 
 // this comes from endpoint defined from express.js server
 //const url = 'http://localhost:8000/upload'
@@ -20,7 +21,7 @@ export class UploadService {
    private res: HttpResponse<any>
    private uploadComplete: Subject<HttpResponse<any>>
 
-   constructor(private http: HttpClient) {
+   constructor(private http: HttpClient, private amplifyService: AmplifyService) {
       this.uploadComplete = new Subject<HttpResponse<any>>();
    }
 
