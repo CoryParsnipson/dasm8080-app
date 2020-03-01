@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./operands.component.scss']
 })
 export class OperandsComponent implements OnInit {
-   @Input() data: string
+   @Input() data: any
 
    constructor() { }
 
