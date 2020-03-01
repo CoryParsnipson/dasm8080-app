@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Online Intel 8080 Disassembler';
+  opened = false;
 
   funfactDB = [
      "this is jackass",
