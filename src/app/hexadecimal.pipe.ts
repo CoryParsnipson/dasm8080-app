@@ -12,7 +12,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({name: 'hexadecimalPipe'})
 export class HexadecimalPipe implements PipeTransform {
    transform(value: number, prefix?: string, padding?: number): string {
-      var hex_str = value ? value.toString(16).toUpperCase() : '';
+      if (value === null || value === undefined) {
+         return '';
+      }
+      
+      var hex_str = value.toString(16).toUpperCase();
       const hex_str_len = hex_str.length;
 
       for (let i = hex_str_len; i < padding; ++i) {
