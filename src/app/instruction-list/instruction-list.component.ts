@@ -30,7 +30,6 @@ export class InstructionListComponent implements OnInit {
                   var instr: Instruction = new Instruction();
 
                   // unpack JSON data fields into Instruction class
-                  // (TODO: probably a better way of doing this using type-safe RPC calls or something)
                   instr.addr = instrJSON.addr;
                   instr.file = instrJSON.file;
                   instr.num_bytes = instrJSON.len;
