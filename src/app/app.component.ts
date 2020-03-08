@@ -10,7 +10,7 @@ export class AppComponent {
   opened = false;
 
   funfactDB = [
-     "this is jackass",
+     "you're watching jackass",
      "I haven't pooped in six years",
      "I like tomatoes",
      "th--why are you looking at me like that?",
