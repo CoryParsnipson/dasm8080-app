@@ -10,7 +10,6 @@ import { UploadService } from '../upload/upload.service'
 })
 export class MainComponent implements OnInit {
    title = 'Online Intel 8080 Disassembler';
-   opened = false;
    instructions: Instruction[] = []
    filename: string
 

@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+   opened = false;
    funfactDB = [
       "you're watching jackass",
       "I haven't pooped in six years",
