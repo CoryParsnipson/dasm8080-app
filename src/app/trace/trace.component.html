@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+<p>This is a disassembled trace and what you would see if you uploaded a file.</p>
+<ng-container *ngIf="instructions?.length == 0">
+   <span class="spinner spinner-inverse">
+      Loading...
+   </span>
+</ng-container>
+<ng-container *ngIf="instructions?.length > 0">
+   <app-instruction-list
+       [filename]="filename"
+       [instructions]="instructions"
+   ></app-instruction-list>
+</ng-container>

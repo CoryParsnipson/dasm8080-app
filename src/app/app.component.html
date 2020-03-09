@@ -1,26 +1,42 @@
+<clr-modal [(clrModalOpen)]="opened" [clrModalSize]="'lg'" [clrModalStaticBackdrop]="false">
+   <h3 class="modal-title">What is this?</h3>
+   <div class="modal-body wrap">
+      <p>Hey there, I'm Cory Parsnipson and {{funfact}}!</p>
+      <p>I made this app to let people disassemble Intel 8080 CPU binaries using an online service.</p>
+      <p>What's an <a href="https://en.wikipedia.org/wiki/Intel_8080" target="_blank" alt="Intel 8080 - Wikipedia">Intel 8080 processor</a>? In a nutshell, it was a popular microprocessor designed in the 70's and is very similar to the CPU used in the original gameboy.</p>
+      <p>Also, you're probably wondering what a disassembler is. A disassembler is kind of like the opposite of a compiler. Instead of compiling human readable programs into binary, it takes binaries and "decompiles" them into human readable <a href="https://en.wikipedia.org/wiki/Assembly_language" target="_blank" alt="Assembly language - Wikipedia">"assembly language"</a>.</p>
+      <p>If you want to see how this app displays disassemblies, you can click on examples in the sub-navigation.</p>
+      <p>Or if you'd rather upload a binary (aka ROM) and watch it in action, here are some samples you can download to try out the app:</p>
+      <ul>
+         <li><a href="assets/binaries/invaders.h" download>Part 1 of an 8080 Space Invaders game</a></li>
+         <li><a href="assets/binaries/CPUTEST.COM" download>An 8080 benchmark called CPUTEST.COM</a></li>
+      </ul>
+   </div>
+   <div class="modal-footer">
+      <button class="btn btn-primary" type="button" (click)="opened = false">Ok</button>
+   </div>
+</clr-modal>
+
 <header class="header">
    <a (click)="opened = true">
       <clr-icon style="width: 22px; height: 22px" shape="info-standard"></clr-icon>
       <span class="info-label">What is this?</span>
    </a>
-   <clr-modal [(clrModalOpen)]="opened" [clrModalSize]="'lg'" [clrModalStaticBackdrop]="false">
-      <h3 class="modal-title">What is this?</h3>
-      <div class="modal-body wrap">
-         <p>Hey there, I'm Cory Parsnipson and {{funfact}}!</p>
-         <p>I made this app to let people disassemble Intel 8080 CPU binaries using an online service.</p>
-         <p>What's an <a href="https://en.wikipedia.org/wiki/Intel_8080" target="_blank" alt="Intel 8080 - Wikipedia">Intel 8080 processor</a>? In a nutshell, it was a popular microprocessor designed in the 70's and is very similar to the CPU used in the original gameboy.</p>
-         <p>Also, you're probably wondering what a disassembler is. A disassembler is kind of like the opposite of a compiler. Instead of compiling human readable programs into binary, it takes binaries and "decompiles" them into human readable <a href="https://en.wikipedia.org/wiki/Assembly_language" target="_blank" alt="Assembly language - Wikipedia">"assembly language"</a>.</p>
-         <p>Here are some sample binaries (aka ROMS) you can download to try out the app:</p>
-         <ul>
-            <li><a href="assets/binaries/invaders.h" download>Part 1 of an 8080 Space Invaders game</a></li>
-            <li><a href="assets/binaries/CPUTEST.COM" download>An 8080 benchmark called CPUTEST.COM</a></li>
-         </ul>
-      </div>
-      <div class="modal-footer">
-         <button class="btn btn-primary" type="button" (click)="opened = false">Ok</button>
-      </div>
-   </clr-modal>
 </header>
+<nav class="subnav">
+   <a routerLink="/" routerLinkActive="active">
+      <clr-icon shape="home"></clr-icon>
+      Home
+   </a>
+   <a routerLink="/examples/invaders.json" routerLinkActive="active">
+      <clr-icon style="width: 22px; height: 22px" shape="code"></clr-icon>
+      invaders.h
+   </a>
+   <a routerLink="/examples/cputest.json" routerLinkActive="active">
+      <clr-icon style="width: 22px; height: 22px" shape="code"></clr-icon>
+      CPUTEST.COM
+   </a>
+</nav>
 <div class="content-container">
    <div class="content-area">
       <div class="centered">

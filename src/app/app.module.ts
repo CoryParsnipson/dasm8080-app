@@ -9,6 +9,7 @@ import { InstructionListModule } from './instruction-list/instruction-list.modul
 import { UploadModule } from './upload/upload.module';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 import { MainComponent } from './main/main.component';
+import { TraceComponent } from './trace/trace.component';
 
 const appRoutes: Routes = [
    {
@@ -18,7 +19,7 @@ const appRoutes: Routes = [
    },
    {
       path: 'examples/:json',
-      component: MainComponent,
+      component: TraceComponent,
    },
 ];
 
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
      AppComponent,
      ThemeSwitcherComponent,
      MainComponent,
+     TraceComponent,
   ],
   imports: [
      BrowserModule,

@@ -14,26 +14,11 @@ export class MainComponent implements OnInit {
    instructions: Instruction[] = []
    filename: string
 
-   funfactDB = [
-      "you're watching jackass",
-      "I haven't pooped in six years",
-      "I like tomatoes",
-      "th--why are you looking at me like that?",
-      "AAAAAHHH BEEEES",
-      "please help me I'm trapped in a open office layout",
-      "I like web development, programming, games, and drawing",
-   ]
-
-   funfact = ""
-
    constructor(
       public uploadService: UploadService
    ) {}
 
    ngOnInit() {
-      let idx = Math.floor(Math.random() * this.funfactDB.length);
-      this.funfact = this.funfactDB[idx];
-
       this.uploadService.subscribe({
          next: res => {
             // get rid of old disassembly artifacts
